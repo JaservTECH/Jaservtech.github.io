@@ -1,0 +1,62 @@
+Core = {
+    FormDisable : function(){
+        $(".form_input_default").attr("disabled", true);
+    },
+    FormEnable : function(){
+        $(".form_input_default").removeAttr("disabled");
+    },
+    Initial: function() {
+        $("#formLogin").on("submit", function(e) {
+            e.preventDefault();
+            Core.FormDisable();
+            var TMPFormData = FormGlobal.GetInstanceFormData();
+            TMPFormData.append("TMPLocation", $("#location").val());
+            TMPFormData.append("TMPUserName", $("#user_name").val());
+            TMPFormData.append("TMPPassword", $("#password").val());
+            $.ajax({
+                url: coreX.SiteUrl + "api/login/response",
+                type: "POST",
+                cache: false,
+                data: TMPFormData,
+                processData: false,
+                contentType: false,
+                success: function(response) {
+                    let error = "";
+                    if (typeof response == "string") {
+                        response = JSON.parse(response);
+                        if (typeof response == 'object') {
+                            if (response.status) {
+                                toastr.success(response.message);
+                                window.localStorage.setItem("token", response.data.token);
+                                setTimeout(function() {
+                                    window.location.reload()
+                                }, 2000);
+                            } else {
+                                error = response.message
+                            }
+                        } else {
+                            error = "Target authorization not allowed";
+                        }
+                    } else {
+                        error = "Target authorization not allowed";
+                    }
+                    if (error != "") {
+                        Core.FormEnable();
+                        toastr.error(error);
+                    }
+                },
+                error: function(xhr, text, other) {
+                    Core.FormEnable();
+                    toastr.error("Please check your connection");
+                }
+            });
+        })
+    }
+};
+
+
+
+
+$(document).ready(function() {
+    Core.Initial();
+});
