@@ -1,0 +1,30 @@
+<head> </head>
+<body>
+  <button id="btn-see-csv">Open CSV</button>
+  <span id="result-see-csv"></span>
+    <script type="text/javascript" src="FileUpload.js"></script>
+    <script type="text/javascript" src="CSVAsArray.js"></script>
+    <script type="text/javascript">
+        var Clicked = new MouseEvent('click', {
+          bubbles : true,
+          cancelable : true,
+          view : window
+        });
+        function Initial(){
+          let btn = document.getElementById("btn-see-csv");
+          let result = document.getElementById("result-see-csv");
+          let box = document.getElementById(CSVAsArray.Attr.ID);
+          btn.addEventListener("click", function(e){
+            result.innerHTML = "";
+            box.dispatchEvent(Clicked);
+          });
+          
+          box.addEventListener("change", async function(e){
+            result.innerHTML = "See Console";
+            let resultText = await CSVAsArray.GetAsArrayIfAvailable();
+            console.log(resultText);
+          });
+        }
+        Initial();
+    </script>
+</body>
