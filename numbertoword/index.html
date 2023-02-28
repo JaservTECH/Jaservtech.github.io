@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	  
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
+	  <title>jaservtech.github.io</title>
+
+	  <!-- Google Font: Source Sans Pro -->
+	  <link rel="stylesheet" href="./../index_files/css">
+	  <!-- Font Awesome -->
+	  <link rel="stylesheet" href="./../index_files/all.min.css">
+	  <!-- icheck bootstrap -->
+	  <link rel="stylesheet" href="./../index_files/icheck-bootstrap.min.css">
+	  <!-- Theme style -->
+	  <link rel="stylesheet" href="./../index_files/adminlte.min.css">
+	  <link rel="stylesheet" href="./../index_files/particles.min.css">
+	  
+	  <link rel="stylesheet" href="./../index_files/toastr.css">
+
+		<style>
+			.dark-mode .card {
+				background-color: #343a4047;
+				color: #fff;
+			}
+			.dark-mode .custom-file-label, .dark-mode .custom-file-label::after, .dark-mode .form-control:not(.form-control-navbar):not(.form-control-sidebar):not(.is-invalid):not(:focus) {
+				border-color: #ffffff;
+			}
+			.dark-mode .custom-control-label::before, .dark-mode .custom-file-label, .dark-mode .custom-file-label::after, .dark-mode .custom-select, .dark-mode .form-control:not(.form-control-navbar):not(.form-control-sidebar), .dark-mode .input-group-text {
+				background-color: #343a4042;
+				color: #fff;
+			}
+			.dark-mode .input-group-text {
+				border-color: #ffffff;
+			}
+            
+			/* Mozilla Scroll Bar */
+			/* ===================================================================================================== */
+			* {
+				scrollbar-color : #495460 rgba(255, 255, 255, 0);
+				scrollbar-width : thin;
+			}
+			/* ===================================================================================================== */
+
+			/* Chromium Base on or safari Scroll Bar*/
+			/* ===================================================================================================== */
+			/* width */
+			::-webkit-scrollbar {
+			width: 7px;
+			}
+			/* Track */
+			::-webkit-scrollbar-track {
+			box-shadow: inset 0 0 0px rgba(255,255,255,0); 
+			border-radius: 10px;
+			}
+			
+			/* Handle */
+			::-webkit-scrollbar-thumb {
+			background: #495460; 
+			border-radius: 10px;
+			}
+
+			/* Handle on hover */
+			::-webkit-scrollbar-thumb:hover {
+			background: #14171a; 
+			}
+			/* ===================================================================================================== */
+        
+		</style>
+	</head>
+	<body class="login-page dark-mode" style="background-image: url(&quot;./../index_files/bg.jpg&quot;); background-size: cover; background-repeat: no-repeat; min-height: 294.781px;">
+	<div id="particles-js"><canvas class="particles-js-canvas-el" style="width: 100%; height: 100%;" width="1366" height="597"></canvas></div>
+	<div class="login-box">
+        <div class="login-logo">
+            <a><b>Number</b>    To Word</a>
+        </div>
+        <!-- /.login-logo -->
+        
+    </div>
+    <div class="card" style="width : calc(100% - 100px)">
+		<div class="card-body login-card-body" style="background-color: #343a4087; border-color: #ffffff;">
+			<p class="login-box-msg">Console</p>
+
+			<form id="formLogin" method="post">
+                <pre class="console" style="color : white; max-height: 350px;"></pre>
+				<div class="row">
+					<div class="col-12">
+						<textarea class="js-code-to-run" style="
+							background: #243d4d;
+							border: 1px solid #3f6791;
+							width: 100%;
+							min-height: 37px;
+							resize: vertical;
+							max-height : 200px;
+							font-family: SFMono-Regular,Menlo,Monaco,Consolas,'Liberation Mono','Courier New',monospace;
+							color : white;
+							font-size : 11px;
+						"></textarea>
+					</div>
+					<!-- /.col -->
+				</div>
+			</form>
+		</div>
+		<!-- /.login-card-body -->
+	</div>
+    <!-- /.login-box -->
+	<!-- jQuery -->
+	<script src="./../index_files/jquery.min.js.download"></script>
+	<!-- Bootstrap 4 -->
+	<script src="./../index_files/bootstrap.bundle.min.js.download"></script>
+	<!-- AdminLTE App -->
+	
+	
+	
+	
+	<script src="./../index_files/particles.min.js.download"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			particlesJS("particles-js", {"particles":{"number":{"value":130,"density":{"enable":true,"value_area":800}},"color":{"value":"#ffffff"},"shape":{"type":"circle","stroke":{"width":0,"color":"#000000"},"polygon":{"nb_sides":5},"image":{"src":"img/github.svg","width":100,"height":100}},"opacity":{"value":0.5,"random":false,"anim":{"enable":false,"speed":1,"opacity_min":0.1,"sync":false}},"size":{"value":3,"random":true,"anim":{"enable":false,"speed":70,"size_min":0.4,"sync":false}},"line_linked":{"enable":true,"distance":150,"color":"#ffffff","opacity":0.3,"width":1},"move":{"enable":true,"speed":20,"direction":"none","random":false,"straight":false,"out_mode":"out","bounce":true,"attract":{"enable":false,"rotateX":600,"rotateY":1200}}},"interactivity":{"detect_on":"canvas","events":{"onhover":{enable : false},"resize":true},"modes":{"grab":{"distance":400,"line_linked":{"opacity":1}},"bubble":{"distance":400,"size":40,"duration":2,"opacity":8,"speed":3},"repulse":{"distance":200,"duration":0.4},"push":{"particles_nb":4},"remove":{"particles_nb":2}}},"retina_detect":true});
+		});
+	</script>
+	<script src="./../index_files/core.js.download"></script>	
+    <script src="./../lib/consolejs/console.js"></script>
+    <script type="text/javascript" src="julianumber.min.js"></script>
+    <script type="text/javascript">
+        function Initial(){
+            ConsoleJS.init({
+                selector: "pre.console",
+				input: "textarea.js-code-to-run"
+            });
+
+            console.log("> Welcome to console viewer");
+            console.log("> Try type this JuliaNumber.setNumber(1200).toString()");
+            console.log("> Currrency Replace JuliaNumber.activeLang = 'USD';");
+            console.log("> Only IDR and USD");
+        }
+        Initial();
+    </script>
+</body></html>
